@@ -1,13 +1,13 @@
-CC=gcc
-CFLAGS=-Wall -O3
+CC = gcc
+CFLAGS = -Wall -O3 -fopenmp
+TARGET = multistart_hooke_seq
+OBJECTS = multistart_hooke_seq.o
 
-#TODO: add the following implementations: multistart_hooke_omp multistart_hooke_mpi
+$(TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJECTS)
 
-all: multistart_hooke_seq
-
-hooke: multistart_hooke_seq.c
-	$(CC) $(CFLAGS) -o multistart_hooke_seq multistart_hooke_seq.c
-
+multistart_hooke_seq.o: multistart_hooke_seq.c
+	$(CC) $(CFLAGS) -c multistart_hooke_seq.c
 
 clean:
-	rm -f multistart_hooke_seq
+	rm -f $(TARGET) $(OBJECTS)

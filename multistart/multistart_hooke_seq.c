@@ -137,7 +137,7 @@
 #include <math.h>
 #include <time.h>
 #include <sys/time.h>
-#include <opm.h>
+#include <omp.h>
 
 #define MAXVARS		(250)	/* max # of variables	     */
 #define RHO_BEGIN	(0.5)	/* stepsize geometric shrink */

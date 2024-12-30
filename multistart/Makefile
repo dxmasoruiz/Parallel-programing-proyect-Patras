@@ -10,4 +10,3 @@ multistart_hooke_seq.o: multistart_hooke_seq.c
 	$(CC) $(CFLAGS) -c multistart_hooke_seq.c
 
 clean:
-	rm -f $(TARGET) $(OBJECTS)
